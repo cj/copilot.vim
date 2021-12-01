@@ -579,8 +579,6 @@ function! s:EnabledStatusMessage() abort
   let buf_disabled = s:BufferDisabled()
   if !s:has_ghost_text && bufwinid('copilot://') == -1
     return "Neovim 0.6 prerelease required to support ghost text"
-  elseif !copilot#IsMapped()
-    return '<Tab> map has been disabled or is claimed by another plugin'
   elseif !get(g:, 'copilot_enabled', 1)
     return 'Disabled globally by :Copilot disable'
   elseif buf_disabled is# 4
